@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HabitantesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,19 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Rutas sin controladores que se ocupan para llamar a los index de cada parte
+Route::middleware('auth')->group(function () {
+
+    Route::view('Listado/vacunas/edades', 'Informes.index-vacunas');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::controller(HabitantesController::class)->group(function () {
+
+        Route::get('Habitantes/registro', 'indexHabitante')->name('registroHabitante');
+    });
+});
+
 
 require __DIR__.'/auth.php';

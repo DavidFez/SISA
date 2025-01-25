@@ -308,16 +308,15 @@ return [
 
         // Sidebar items para las opciones del menu del lado izquierdo
         [
-            'text' => 'Informes',
-            'url' => 'admin/pages',
+            'text' => 'Listado Vacunas',
+            'url' => 'Listado/vacunas/edades',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
         ],
         ['header' => 'POBLACIÓN'],
         [
             'text' => 'Habitantes',
-            'url' => 'admin/settings',
+            'url' => 'Habitantes/registro',
             'icon' => 'fas fa-fw  fa-user-plus',
         ],
         [
@@ -438,6 +437,13 @@ return [
                 ],
             ],
         ],
+        'Bootstrap' => [
+            'active' => true,
+            'files' => [
+                ['type' => 'css', 'asset' => false, 'location' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'],
+                ['type' => 'js', 'asset' => false, 'location' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'],
+            ],
+        ],
     ],
 
     /*
@@ -485,5 +491,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

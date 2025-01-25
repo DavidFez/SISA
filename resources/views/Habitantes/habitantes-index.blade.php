@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'SISA-Inicio')
+@section('title', 'Habitantes')
 
 @section('content_header')
-    <h1>SISA</h1>
+    <h1>Registro de habitantes</h1>
 @stop
 
 @section('content')
-    <p>Sistama de control de población.</p>
+    
 @stop
 
 @section('css')

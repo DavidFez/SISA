@@ -1,7 +1,3 @@
-<x-guest-layout>
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-</x-guest-layout>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +28,22 @@
             color: #4A90E2;
             text-align: center;
         }
+        .form-control-custom {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-control-custom:focus {
+            border-color: #4A90E2;
+            outline: none;
+            box-shadow: 0 0 4px rgba(74, 144, 226, 0.3);
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -44,43 +56,36 @@
                 @csrf
         
                 <!-- Email Address -->
-                <div>
-                    <x-input-label for="email" :value="__('Correo')" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <div class="mb-3">
+                    <label for="email">Correo</label>
+                    <input id="email" class="form-control form-control-custom" type="email" name="email" :value="old('email')" required autofocus autocomplete="username">
+                    @error('email')
+                        <div class="text-danger mt-1">{{ $message }}</div>
+                    @enderror
                 </div>
         
                 <!-- Password -->
-                <div class="mt-4">
-                    <x-input-label for="password" :value="__('Password')" />
-        
-                    <x-text-input id="password" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password"
-                                    required autocomplete="current-password" />
-        
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input id="password" class="form-control form-control-custom" type="password" name="password" required autocomplete="current-password">
+                    @error('password')
+                        <div class="text-danger mt-1">{{ $message }}</div>
+                    @enderror
                 </div>
         
                 <!-- Remember Me -->
-                <div class="block mt-4">
-                    <label for="remember_me" class="inline-flex items-center">
-                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                        <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                    </label>
+                <div class="form-check mb-4">
+                    <input id="remember_me" type="checkbox" class="form-check-input" name="remember">
+                    <label for="remember_me" class="form-check-label">Recordarme</label>
                 </div>
         
-                <div class="flex items-center justify-end mt-4">
-        
-                    <x-primary-button class="ms-3">
-                        {{ __('Log in') }}
-                    </x-primary-button>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 </div>
             </form>
-        
-            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
