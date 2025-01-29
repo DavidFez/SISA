@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::view('Listado/vacunas/edades', 'Informes.index-vacunas');
+    Route::view('Listado/vacunas/informe', 'livewire.vacunas.plantillaVacunas');
 });
 
 Route::middleware('auth')->group(function () {

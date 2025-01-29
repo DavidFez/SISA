@@ -3,11 +3,16 @@
 @section('title', 'SISA-Inicio')
 
 @section('content_header')
-    <h1>SISA</h1>
+    <div class="bg-primary-subtle p-4 rounded shadow-sm text-center">
+        <h1 class="display-4 text-primary font-weight-bold">SISA</h1>
+        <hr class="w-50 mx-auto border-primary">
+        <h5 class="text-muted">Sistema de Control Poblacional Adonay</h5>
+    </div>
 @stop
 
+
 @section('content')
-    <p>Sistama de control de población.</p>
+    @livewire('index')
 @stop
 
 @section('css')
