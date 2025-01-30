@@ -329,6 +329,11 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-home',
         ],
+        [
+            'text' => 'Comunidades',
+            'url' => 'Comunidades/index',
+            'icon' => 'fas fa-fw fa-map-signs',
+        ],
     
     ],
 

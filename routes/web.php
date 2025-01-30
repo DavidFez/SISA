@@ -21,8 +21,11 @@ Route::middleware('auth')->group(function () {
 // Rutas sin controladores que se ocupan para llamar a los index de cada parte
 Route::middleware('auth')->group(function () {
 
+    // Para vacunas
     Route::view('Listado/vacunas/edades', 'Informes.index-vacunas');
-    Route::view('Listado/vacunas/informe', 'livewire.vacunas.plantillaVacunas');
+
+    //Para las comunidades
+    Route::view('Comunidades/index', 'Comunidades.comunidades-index');
 });
 
 Route::middleware('auth')->group(function () {
