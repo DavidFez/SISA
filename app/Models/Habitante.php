@@ -24,7 +24,6 @@ class Habitante extends Model
         'fechaNacimiento',
         'numeroExpediente',
         'estado',
-        'idDireccion'
     ];
 
     public function vivienda(){
@@ -35,11 +34,6 @@ class Habitante extends Model
     public function familia(){
 
         return $this->belongsTo(Familia::class, 'idFamilia', 'idFamilia');
-    }
-
-    public function direccion(){
-
-        return $this->belongsTo(Direccion::class, 'idDireccion', 'idDireccion');
     }
 
     public function fechaNacimientoFomato(){

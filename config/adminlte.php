@@ -326,7 +326,7 @@ return [
         ],
         [
             'text' => 'Viviendas',
-            'url' => 'admin/settings',
+            'url' => 'Viviendas/index',
             'icon' => 'fas fa-fw fa-home',
         ],
         [

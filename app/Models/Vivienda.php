@@ -10,12 +10,18 @@ class Vivienda extends Model
     //
     use HasFactory;
 
-    public $timestamp = false;
+    public $timestamps = false;
     protected $table = 'tbl_vivienda';
     protected $primaryKey = 'idVivienda';
 
     protected $fillable = [
         'numeroVivienda',
+        'idDireccion',
     ];
+
+    public function direccion(){
+
+        return $this->belongsTo(Direccion::class, 'idDireccion', 'idDireccion');
+    }
     
 }
