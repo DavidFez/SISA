@@ -11,7 +11,7 @@ class Habitante extends Model
 {
     use HasFactory;
     
-    public $timestamp = false;
+    public $timestamps = false;
     protected $table = 'tbl_habitante';
     protected $primaryKey = 'idHabitante';
 
