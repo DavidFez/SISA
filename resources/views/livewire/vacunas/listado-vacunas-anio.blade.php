@@ -1,40 +1,21 @@
 <div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Busqueda por Mes y Año</h3>
+    <h3 class="mb-4 text-primary">Busqueda por Año</h3>
 
     <div class="mb-3 w-50">
-        <label for="year" class="form-label fw-bold">Escribir Año</label>
+        <label for="anio" class="form-label fw-bold">Escribir Año</label>
         <input 
             type="number" 
             class="form-control border-primary rounded-pill" 
             placeholder="Escriba un año" 
             min="1900" 
             max="2050"
-            wire:model="year">
-    </div>
-
-    <div class="mb-3 w-50">
-        <label for="month" class="form-label fw-bold">Seleccionar Mes</label>
-        <select id="month" class="form-select border-primary rounded-pill" wire:model="selectedMonth">
-            <option value="" selected>Elige un mes</option>
-            <option value="01">Enero</option>
-            <option value="02">Febrero</option>
-            <option value="03">Marzo</option>
-            <option value="04">Abril</option>
-            <option value="05">Mayo</option>
-            <option value="06">Junio</option>
-            <option value="07">Julio</option>
-            <option value="08">Agosto</option>
-            <option value="09">Septiembre</option>
-            <option value="10">Octubre</option>
-            <option value="11">Noviembre</option>
-            <option value="12">Diciembre</option>
-        </select>
+            wire:model="anio">
     </div>
 
     <div class="mb-3 w-50">
         <button 
             class="btn btn-primary w-100 fw-bold rounded-pill" 
-            wire:click="buscarHabitantes">
+            wire:click="buscarPorAnio">
             <i class="fas fa-search"></i> Buscar Habitantes
         </button>
     </div>
@@ -55,7 +36,7 @@
                         <span class="badge bg-secondary">1</span>
                     </td>
                     <td>
-                        <span class="text-primary fw-bold">Listado del mes de {{$oldMonth}} de {{$oldAnio}}</span>
+                        <span class="text-primary fw-bold">Listado del año {{$oldAnio}}</span>
                     </td>
                     <td class="text-center">
                         <button wire:click="descargarPDF"
@@ -98,6 +79,7 @@
             No se encontraron datos para el año y mes seleccionados.
         </div>
     @endif
+
 </div>
 
     

@@ -309,9 +309,19 @@ return [
         // Sidebar items para las opciones del menu del lado izquierdo
         [
             'text' => 'Listado Vacunas',
-            'url' => 'Listado/vacunas/edades',
-            'icon' => 'far fa-fw fa-file',
-            'label_color' => 'success',
+            'icon' => 'fas fa-syringe',
+            'submenu' => [
+                [
+                    'text' => 'Por Mes y Año',
+                    'url' => 'Listado/vacunas/edades',
+                    'icon' => 'far fa-file',
+                ],
+                [
+                    'text' => 'Por Año',
+                    'url' => 'Listado/vacunas/por-anio',
+                    'icon' => 'far fa-file',
+                ],
+            ],
         ],
         ['header' => 'POBLACIÓN'],
         [

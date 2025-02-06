@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::view('Listado/vacunas/edades', 'Informes.index-vacunas');
+    Route::view('Listado/vacunas/por-anio', 'Informes.index-vacunas-anio');
 
     Route::view('Comunidades/index', 'Comunidades.comunidades-index');
 
