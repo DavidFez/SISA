@@ -17,7 +17,6 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Dirección</th>
                                 <th>Acciones</th>
                             </tr>
@@ -25,7 +24,6 @@
                         <tbody>
                             @foreach ($direcciones as $direccion)
                                 <tr>
-                                    <td>{{ $direccion->idDireccion }}</td>
                                     <td>{{ $direccion->direccion }}</td>
                                     <td>
                                         <button wire:click="asignarDireccion({{ $direccion->idDireccion }})" class="btn btn-sm btn-success">
