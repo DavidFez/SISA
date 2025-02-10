@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::view('Comunidades/index', 'Comunidades.comunidades-index');
 
     Route::view('Viviendas/index', 'Viviendas.index-viviendas');
+
+    Route::view('Familias/index', 'Familias.familias-index');
 });
 
 Route::middleware('auth')->group(function () {

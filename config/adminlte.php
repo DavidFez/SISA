@@ -331,7 +331,7 @@ return [
         ],
         [
             'text' => 'Familias',
-            'url' => 'admin/settings',
+            'url' => 'Familias/index',
             'icon' => 'fas fa-fw fa-users',
         ],
         [
