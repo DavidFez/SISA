@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    
+    @livewire('habitantes.listado-habitantes')
 @stop
 
 @section('css')
