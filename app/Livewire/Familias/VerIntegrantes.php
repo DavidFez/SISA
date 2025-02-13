@@ -2,20 +2,36 @@
 
 namespace App\Livewire\Familias;
 
+use App\Models\Familia;
 use App\Models\Habitante;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class VerIntegrantes extends Component
 {
-    public $idFamilia;
     public $integrantes = [];
+    public $numFamilia;
+    public $mostrarModal = false;
 
-    protected $listeners = ['cargarFamilia'];
-
-    public function cargarFamilia($idFamilia)
+    
+    /* El componente anterior devuelve un evento que es escuchado por este componente y hace una consulta
+        la cual obtiene los integrantes de la familia correspondiente, en este caso recibe el id de la familia
+        y luego lo que se hace es obtener todos los habiantes que pertenecen a esa familia y se retorna con dispatch
+        un evento para abrir el modal cargado con los datos
+    */
+    
+    #[On('mostrar-integrantes')] 
+    public function verIntegrantes($idFamilia)
     {
-        $this->idFamilia = $idFamilia;
         $this->integrantes = Habitante::where('idFamilia', $idFamilia)->get();
+        $this->numFamilia = Familia::where('idFamilia', $idFamilia)->value('numeroFamilia') ?? 'No encontrada';
+
+        $this->dispatch('abrirModal');
+    }
+
+    public function cerrarModal()
+    {
+        $this->dispatch('cerrarModal');
     }
 
     public function render()

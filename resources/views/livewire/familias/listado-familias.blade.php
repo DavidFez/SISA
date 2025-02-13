@@ -19,7 +19,7 @@
                             <span class="badge bg-info">{{ $familia->numeroFamilia }}</span>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-primary btn-sm" wire:click="cargarFamilia({{ $familia->idFamilia }})" data-bs-toggle="modal" data-bs-target="#modalVerIntegrantes">
+                            <button class="btn btn-primary btn-sm" wire:click="cargarFamilia({{ $familia->idFamilia }})">
                                 <i class="fas fa-users"></i> Ver Integrantes
                             </button>
                         </td>                        
