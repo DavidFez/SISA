@@ -14,7 +14,7 @@ class PoblacionEstadisticas
 
             'totalFamilias' => Familia::count(),
             'totalViviendas' => Vivienda::count(),
-            'totalHabitantes' => Habitante::count(),
+            'totalHabitantes' => Habitante::where('estado', 'Activo')->count(),
         ];
 
     }
