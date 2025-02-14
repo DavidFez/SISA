@@ -12,4 +12,9 @@ class HabitantesController extends Controller
         return view('Habitantes.habitantes-index');
     }
 
+    public function opcionListadoHabitantes(){
+
+        return view('Habitantes.opcion-listado-habitantes');
+    }
+
 }

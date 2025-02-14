@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(HabitantesController::class)->group(function () {
 
         Route::get('Habitantes/opciones', 'indexHabitante');
+        Route::get('Habitantes/listado-habitantes', 'opcionListadoHabitantes')->name('opcionListHabitantes');
     });
 });
 

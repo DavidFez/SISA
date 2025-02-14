@@ -3,7 +3,7 @@
 
         <!-- Listado de Habitantes -->
         <div class="col-md-4">
-            <a href="#" class="text-decoration-none">
+            <a href="{{ route('opcionListHabitantes') }}" class="text-decoration-none">
                 <div class="card text-center shadow border-0">
                     <div class="card-body">
                         <div class="icon-circle bg-primary text-white mb-3 mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; border-radius: 50%;">

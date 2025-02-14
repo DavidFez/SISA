@@ -3,11 +3,11 @@
 @section('title', 'Listado de Habitantes')
 
 @section('content_header')
-    <h1>Listado de Todos los Habitantes</h1>
+    <span class="badge text-bg-info"><h1>Listado de Todos los Habitantes</h1></span>
 @stop
 
 @section('content')
-    <h1>Hola</h1>
+    @livewire('habitantes.op-listado-habitantes')
 @stop
 
 @section('css')
