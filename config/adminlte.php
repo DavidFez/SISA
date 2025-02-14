@@ -326,7 +326,7 @@ return [
         ['header' => 'POBLACIÓN'],
         [
             'text' => 'Habitantes',
-            'url' => 'Habitantes/registro',
+            'url' => 'Habitantes/opciones',
             'icon' => 'fas fa-fw  fa-user-plus',
         ],
         [
