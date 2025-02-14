@@ -1,0 +1,19 @@
+@extends('adminlte::page')
+
+@section('title', 'Habitantes No Activos')
+
+@section('content_header')
+    <span class="badge text-bg-info"><h1>Listado de Habitantes No Activos</h1></span>
+@stop
+
+@section('content')
+    @livewire('habitantes.op-habitantes-no-activos')
+@stop
+
+@section('css')
+    
+@stop
+
+@section('js')
+    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+@stop
