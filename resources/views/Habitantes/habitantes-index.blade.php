@@ -3,7 +3,7 @@
 @section('title', 'Habitantes')
 
 @section('content_header')
-    <h1>Registro de habitantes</h1>
+    <h1>Gestion de Habitantes</h1>
 @stop
 
 @section('content')

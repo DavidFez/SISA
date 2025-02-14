@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::controller(HabitantesController::class)->group(function () {
 
-        Route::get('Habitantes/registro', 'indexHabitante')->name('registroHabitante');
+        Route::get('Habitantes/opciones', 'indexHabitante');
     });
 });
 
