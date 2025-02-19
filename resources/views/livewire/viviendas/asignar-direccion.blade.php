@@ -1,7 +1,7 @@
 
 <div>
     <!-- Botón para abrir el modal -->
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAsignarDireccion">
+    <button type="button" class="btn btn-success fs-6" data-bs-toggle="modal" data-bs-target="#modalAsignarDireccion">
         Asignar Dirección
     </button>
 
@@ -28,7 +28,7 @@
                                         <h5><span class="badge text-bg-dark">{{ $direccion->direccion }}</span></h5>
                                     </td>
                                     <td>
-                                        <button wire:click="asignarDireccion({{ $direccion->idDireccion }})" class="btn btn-sm btn-success">
+                                        <button wire:click="asignarDireccion({{ $direccion->idDireccion }})" class="btn btn-sm btn-success fs-6">
                                             <i class="fas fa-map-marker-alt me-1"></i> Asignar Dirección
                                         </button>
                                         

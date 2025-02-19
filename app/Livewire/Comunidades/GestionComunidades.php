@@ -3,6 +3,8 @@
 namespace App\Livewire\Comunidades;
 
 use App\Models\Direccion;
+use App\Models\Vivienda;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class GestionComunidades extends Component
@@ -44,10 +46,12 @@ class GestionComunidades extends Component
             ]);
             
             $this->modoEdicion = false; // Salir del modo edición
+            $this->dispatch('ResEditDir', 'La dirección se ha editado correctamenrte.');
 
         } else {
     
             Direccion::create(['direccion' => $this->direccion]);
+            $this->dispatch('ResSaveDir', 'Se agregó la dirección correctamente.');
         }
 
         $this->resetInput();
@@ -59,6 +63,25 @@ class GestionComunidades extends Component
         $this->direccionId = $direccion->idDireccion;
         $this->direccion = $direccion->direccion;
         $this->modoEdicion = true;
+    }
+
+    #[On('eliminarDireccion')] 
+    public function deleteDireccion($id)
+    {
+        $verificarVivienda = Vivienda::where('idDireccion', $id)->first();
+
+        if ($verificarVivienda) {
+
+            $this->dispatch('ErrorDeleteDir', 'La direccion ya está asignada a una vivienda por lo tanto no se puede eliminar.');
+            return;
+        }
+
+        $direccion = Direccion::find($id);
+
+        if ($direccion) {
+            $direccion->delete();
+            $this->dispatch('alertaExito', 'Dirección eliminada con éxito');
+        }
     }
 
     public function resetInput()
