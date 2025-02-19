@@ -33,7 +33,7 @@
 
     <div class="mb-3 w-50">
         <button 
-            class="btn btn-primary w-100 fw-bold rounded-pill" 
+            class="btn btn-success w-100 fw-bold rounded-pill" 
             wire:click="buscarHabitantes">
             <i class="fas fa-search"></i> Buscar Habitantes
         </button>
@@ -41,8 +41,8 @@
 
     @if (count($habitantes) > 0)
 
-        <table class="table table-bordered table-hover w-75 mt-4">
-            <thead class="bg-primary text-white">
+        <table class="table table-bordered w-75 mt-4">
+            <thead class="table-dark">
                 <tr>
                     <th>#</th>
                     <th>Informe</th>
@@ -59,8 +59,8 @@
                     </td>
                     <td class="text-center">
                         <button wire:click="descargarPDF"
-                            class="btn btn-outline-success rounded-pill btn-sm">
-                            <i class="fas fa-solid fa-arrow-down"></i> Descargar Listado
+                            class="btn btn-success rounded-pill fs-6 btn-sm">
+                            <i class="fas fa-download"></i> Descargar Listado PDF
                         </button>
                     </td>
                 </tr>
@@ -72,7 +72,7 @@
         </div>
 
         <table class="table table-bordered table-hover w-75 mt-4">
-            <thead class="bg-secondary text-white">
+            <thead class="table-dark">
                 <tr>
                     <th>Corr</th>
                     <th>Nombre</th>
@@ -83,7 +83,7 @@
                 @foreach($habitantes as $index => $habitante)
                     <tr>
                         <td>
-                            <span class="badge bg-info">{{ $index + 1 }}</span>
+                            <span class="badge bg-dark">{{ $index + 1 }}</span>
                         </td>
                         <td>{{ $habitante->nombre }} {{ $habitante->apellido }} </td>
                         <td>{{ $habitante->fechaNacimientoFomato()}}</td>

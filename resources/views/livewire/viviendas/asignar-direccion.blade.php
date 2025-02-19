@@ -2,7 +2,7 @@
 <div>
     <!-- Botón para abrir el modal -->
     <button type="button" class="btn btn-success fs-6" data-bs-toggle="modal" data-bs-target="#modalAsignarDireccion">
-        Asignar Dirección
+        <i class="fas fa-plus me-1"></i> Asignar Dirección
     </button>
 
     <!-- Modal -->
