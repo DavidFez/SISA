@@ -21,7 +21,7 @@
                             <tbody>
                                 @foreach($integrantes as $index => $habitante)
                                     <tr>
-                                        <td><span class="badge bg-info">{{ $index + 1 }}</span></td>
+                                        <td><span class="badge bg-dark">{{ $index + 1 }}</span></td>
                                         <td>{{ $habitante->nombre }}</td>
                                         <td>{{ $habitante->apellido }}</td>
                                         <td>{{ $habitante->fechaNacimientoFomato() }}</td>

@@ -16,10 +16,10 @@
                 @foreach ($listadoFamilias as $index => $familia)
                     <tr>
                         <td class="fw-bold">
-                            <span class="badge bg-info">{{ $familia->numeroFamilia }}</span>
+                            <h5><span class="badge bg-dark">{{ $familia->numeroFamilia }}</span></h5>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-success btn-sm" wire:click="cargarFamilia({{ $familia->idFamilia }})">
+                            <button class="btn btn-success btn-sm fs-6" wire:click="cargarFamilia({{ $familia->idFamilia }})">
                                 <i class="fas fa-users"></i> Ver Integrantes
                             </button>
                         </td>                        
