@@ -1,7 +1,7 @@
 
 <div>
     <!-- Botón para abrir el modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAsignarDireccion">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAsignarDireccion">
         Asignar Dirección
     </button>
 
@@ -10,12 +10,12 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalAsignarDireccionLabel">Asignar Dirección</h5>
+                    <h5 class="modal-title" id="modalAsignarDireccionLabel">Direcciones Disponibles</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-striped">
-                        <thead>
+                    <table class="table table-striped text-center">
+                        <thead class="table-dark">
                             <tr>
                                 <th>Dirección</th>
                                 <th>Acciones</th>
@@ -24,11 +24,14 @@
                         <tbody>
                             @foreach ($direcciones as $direccion)
                                 <tr>
-                                    <td>{{ $direccion->direccion }}</td>
+                                    <td>
+                                        <h5><span class="badge text-bg-dark">{{ $direccion->direccion }}</span></h5>
+                                    </td>
                                     <td>
                                         <button wire:click="asignarDireccion({{ $direccion->idDireccion }})" class="btn btn-sm btn-success">
-                                            Asignar
+                                            <i class="fas fa-map-marker-alt me-1"></i> Asignar Dirección
                                         </button>
+                                        
                                     </td>
                                 </tr>
                             @endforeach
