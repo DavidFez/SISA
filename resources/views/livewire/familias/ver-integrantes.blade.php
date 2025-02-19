@@ -9,8 +9,8 @@
                 </div>
                 <div class="modal-body">
                     @if(count($integrantes) > 0)
-                        <table class="table table-bordered table-hover">
-                            <thead class="bg-secondary text-white">
+                        <table class="table table-bordered text-center table-hover">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>#</th>
                                     <th>Nombre</th>

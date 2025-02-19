@@ -4,9 +4,9 @@
 
     @if ($listadoFamilias->count() > 0)
 
-        <table class="table table-bordered table-hover w-75 mt-4">
+        <table class="table table-bordered table-hover text-center w-75 mt-4">
 
-            <thead class="bg-primary text-white">
+            <thead class="table-dark">
                 <tr>
                     <th>Número de Famila</th>
                     <th class="text-center">Acciones</th>
@@ -19,7 +19,7 @@
                             <span class="badge bg-info">{{ $familia->numeroFamilia }}</span>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-primary btn-sm" wire:click="cargarFamilia({{ $familia->idFamilia }})">
+                            <button class="btn btn-success btn-sm" wire:click="cargarFamilia({{ $familia->idFamilia }})">
                                 <i class="fas fa-users"></i> Ver Integrantes
                             </button>
                         </td>                        
