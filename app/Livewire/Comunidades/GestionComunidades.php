@@ -28,7 +28,7 @@ class GestionComunidades extends Component
 
     public function render()
     {
-        $this->direcciones = Direccion::all(); 
+        $this->direcciones = Direccion::orderBy('iddireccion', 'asc')->get(); 
         return view('livewire.comunidades.gestion-comunidades');
     }
 
