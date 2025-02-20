@@ -22,8 +22,7 @@ class ListadoVacunasAnio extends Component
         if ($this->anio) {
 
             $this->habitantes = Habitante::whereYear('fechanacimiento', $this->anio)
-            ->orderByRaw('EXTRACT(MONTH FROM fechanacimiento) ASC')
-            ->get();
+            ->orderByRaw('EXTRACT(MONTH FROM fechanacimiento) ASC')->where('estado', 'Activo')->get();
 
             $this->oldAnio = $this->anio;
 
