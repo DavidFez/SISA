@@ -14,8 +14,8 @@
         <tbody>
             @foreach($habitantes as $habitante)
                 <tr>
-                    <td><span class="badge bg-primary p-2">{{ $habitante->vivienda->numeroVivienda }}</span></td>
-                    <td><span class="badge bg-secondary p-2">{{ $habitante->familia->numeroFamilia }}</span></td>
+                    <td><span class="badge bg-primary p-2">{{ $habitante->vivienda->numerovivienda }}</span></td>
+                    <td><span class="badge bg-secondary p-2">{{ $habitante->familia->numerofamilia }}</span></td>
                     <td class="fw-bold">{{ $habitante->nombre }}</td>
                     <td class="fw-bold">{{ $habitante->apellido }}</td>
                     <td>
@@ -23,7 +23,7 @@
                         {{ $habitante->fechaNacimientoFomato() }}
                     </td>
                     <td>
-                        <span class="text-muted">{{ $habitante->numeroExpediente }}</span>
+                        <span class="text-muted">{{ $habitante->numeroexpediente }}</span>
                     </td>
                     <td>
                         @if($habitante->estado == 'Activo')

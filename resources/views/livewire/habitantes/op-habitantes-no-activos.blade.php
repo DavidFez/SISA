@@ -14,8 +14,8 @@
         <tbody>
             @foreach($habitantesNoActivos as $habitante)
                 <tr>
-                    <td><span class="badge bg-primary p-2">{{ $habitante->vivienda->numeroVivienda ?? 'N/A' }}</span></td>
-                    <td><span class="badge bg-secondary p-2">{{ $habitante->familia->numeroFamilia ?? 'N/A' }}</span></td>
+                    <td><span class="badge bg-primary p-2">{{ $habitante->vivienda->numerovivienda ?? 'N/A' }}</span></td>
+                    <td><span class="badge bg-secondary p-2">{{ $habitante->familia->numerofamilia ?? 'N/A' }}</span></td>
                     <td class="fw-bold">{{ $habitante->nombre }}</td>
                     <td class="fw-bold">{{ $habitante->apellido }}</td>
                     <td>
@@ -23,7 +23,7 @@
                         {{ $habitante->fechaNacimientoFomato() }}
                     </td>
                     <td>
-                        <span class="text-muted">{{ $habitante->numeroExpediente }}</span>
+                        <span class="text-muted">{{ $habitante->numeroexpediente }}</span>
                     </td>
                     <td>
                         @if($habitante->estado === 'Inactivo')
