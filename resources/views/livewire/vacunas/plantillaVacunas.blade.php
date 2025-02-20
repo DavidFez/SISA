@@ -100,14 +100,14 @@
         <div class="body-content">
 
             <p class="texto-encabezado">
-                NOMBRE DEL PROMOTOR(A) DE SALUD: <u>JOSÉ ADONAY DEL CID</u>  UCSF: <u>UNIDAD DE SALUD EL ESPINO</u>  CANTÓN: <u>EL JÍCARO</u>  REGIÓN: <u>ORIENTAL</u>  SIBASI: <u>SAN MIGUEL.</u>
+                NOMBRE DEL PROMOTOR(A) DE SALUD: <u>JOSÉ ADONAY DEL CID</u>  UCSF: <u>UNIDAD DE SALUD EL ESPINO</u>  CANTÓN: <u>EL JÍCARO</u>  REGIÓN: <u>ORIENTAL</u>  SIBASI: <u>USULUTÁN.</u>
             </p>
 
             <table class="table">
                 
                 <thead>
                     <tr>
-                        <td rowspan="2">No. Viv.</td>
+                        <td rowspan="2">No.</td>
                         <td rowspan="2">NOMBRE Y APELLIDO</td>
                         <td rowspan="2">FECHA DE NAC.</td>
                         <td colspan="8">ESQUEMA DE VACUNACIÓN TD: ADOLESCENTES Y ADULTOS MAYORES (UNA DOSIS CADA 10 AÑOS)</td>

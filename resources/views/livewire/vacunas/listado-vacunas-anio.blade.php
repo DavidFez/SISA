@@ -49,7 +49,7 @@
         </table>
 
         <div class="alert alert-success w-75 mt-4 text-center" role="alert">
-            <span class="badge bg-primary"> {{ count($habitantes) }} Habitantes</span>
+            <span class="badge bg-primary">Resultado: {{ count($habitantes) }} Habitantes</span>
         </div>
 
         <table class="table table-bordered table-hover w-75 mt-4">
@@ -66,8 +66,8 @@
                         <td>
                             <span class="badge bg-dark">{{ $index + 1 }}</span>
                         </td>
-                        <td>{{ $habitante->nombre }} {{ $habitante->apellido }} </td>
-                        <td>{{ $habitante->fechaNacimientoFomato()}}</td>
+                        <td  class="fw-bold">{{ $habitante->nombre }} {{ $habitante->apellido }} </td>
+                        <td class="fw-bold">{{ $habitante->fechaNacimientoFomato()}}</td>
                     </tr>
                 @endforeach
             </tbody>

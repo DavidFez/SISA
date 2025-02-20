@@ -36,8 +36,8 @@ class ListadoVacunas extends Component
 
         if ($this->year && $this->selectedMonth) {
 
-            $this->habitantes = Habitante::whereYear('fechaNacimiento', $this->year)
-                ->whereMonth('fechaNacimiento', $this->selectedMonth)
+            $this->habitantes = Habitante::whereYear('fechanacimiento', $this->year)
+                ->whereMonth('fechanacimiento', $this->selectedMonth)
                 ->get();
         
             $this->oldMonth = $months[str_pad($this->selectedMonth, 2, '0', STR_PAD_LEFT)] ?? 'Mes desconocido';
