@@ -12,7 +12,7 @@ class Direccion extends Model
 
     public $timestamps = false;
     protected $table = 'tbl_direccion';
-    protected $primaryKey = 'idDireccion';
+    protected $primaryKey = 'iddireccion';
 
     protected $fillable = [
         'direccion',

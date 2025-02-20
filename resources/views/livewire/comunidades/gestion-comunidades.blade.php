@@ -44,13 +44,13 @@
                             <!-- Botón de editar -->
                             <button 
                                 class="btn btn-outline-primary rounded-pill btn-sm fs-6"
-                                wire:click="editarDireccion({{ $direccion->idDireccion }})">
+                                wire:click="editarDireccion({{ $direccion->iddireccion }})">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
 
                             <button 
                                 class="btn btn-outline-danger rounded-pill btn-sm fs-6"
-                                onclick="confirmarEliminacion({{ $direccion->idDireccion }})">
+                                onclick="confirmarEliminacion({{ $direccion->iddireccion }})">
                                 <i class="fas fa-trash-alt"></i> Eliminar
                             </button>
 

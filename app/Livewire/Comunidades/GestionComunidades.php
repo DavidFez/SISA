@@ -60,7 +60,7 @@ class GestionComunidades extends Component
     public function editarDireccion($id)
     {
         $direccion = Direccion::find($id);
-        $this->direccionId = $direccion->idDireccion;
+        $this->direccionId = $direccion->iddireccion;
         $this->direccion = $direccion->direccion;
         $this->modoEdicion = true;
     }
@@ -68,7 +68,7 @@ class GestionComunidades extends Component
     #[On('eliminarDireccion')] 
     public function deleteDireccion($id)
     {
-        $verificarVivienda = Vivienda::where('idDireccion', $id)->first();
+        $verificarVivienda = Vivienda::where('iddireccion', $id)->first();
 
         if ($verificarVivienda) {
 
