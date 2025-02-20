@@ -19,7 +19,7 @@ class AsignarDireccion extends Component
     public function render()
     {
         // Obtener las direcciones disponibles paginadas
-        $this->direcciones = Direccion::all();
+        $this->direcciones = Direccion::orderBY('iddireccion', 'asc')->get();
         return view('livewire.viviendas.asignar-direccion');
     }
 
@@ -27,7 +27,7 @@ class AsignarDireccion extends Component
     {
         // Lógica para asignar la dirección a la vivienda
         $vivienda = Vivienda::find($this->viviendaId);
-        $vivienda->idDireccion = $direccionId;
+        $vivienda->iddireccion = $direccionId;
         $vivienda->save();
 
         // Emitir un evento para actualizar la lista de viviendas

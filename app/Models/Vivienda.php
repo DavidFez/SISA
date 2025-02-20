@@ -12,16 +12,16 @@ class Vivienda extends Model
 
     public $timestamps = false;
     protected $table = 'tbl_vivienda';
-    protected $primaryKey = 'idVivienda';
+    protected $primaryKey = 'idvivienda';
 
     protected $fillable = [
-        'numeroVivienda',
-        'idDireccion',
+        'numerovivienda',
+        'iddireccion',
     ];
 
     public function direccion(){
 
-        return $this->belongsTo(Direccion::class, 'idDireccion', 'idDireccion');
+        return $this->belongsTo(Direccion::class, 'iddireccion', 'iddireccion');
     }
     
 }

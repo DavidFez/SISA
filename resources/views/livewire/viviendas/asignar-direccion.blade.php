@@ -28,7 +28,7 @@
                                         <h5><span class="badge text-bg-dark">{{ $direccion->direccion }}</span></h5>
                                     </td>
                                     <td>
-                                        <button wire:click="asignarDireccion({{ $direccion->idDireccion }})" class="btn btn-sm btn-success fs-6">
+                                        <button wire:click="asignarDireccion({{ $direccion->iddireccion }})" class="btn btn-sm btn-success fs-6">
                                             <i class="fas fa-map-marker-alt me-1"></i> Asignar Dirección
                                         </button>
                                         

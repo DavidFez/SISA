@@ -15,7 +15,7 @@
                     <tr>
 
                         <td class="fw-bold">
-                            <h5><span class="badge bg-dark">{{ $vivienda->numeroVivienda }}</span></h5>
+                            <h5><span class="badge bg-dark">{{ $vivienda->numerovivienda }}</span></h5>
                         </td>
                         <td>
                             @if ($vivienda->direccion)
@@ -26,7 +26,7 @@
                         </td>
                         <td class="text-center">
                             @if (!$vivienda->direccion)
-                                @livewire('viviendas.asignar-direccion', ['viviendaId' => $vivienda->idVivienda], key($vivienda->idVivienda))
+                                @livewire('viviendas.asignar-direccion', ['viviendaId' => $vivienda->idvivienda], key($vivienda->idvivienda))
                             @else
                                 <h5><span class="badge text-bg-success">Dirección Asignada</span></h5>
                             @endif

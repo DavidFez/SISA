@@ -15,7 +15,7 @@ class GestionViviendas extends Component
     
     public function render()
     {
-        $listaViviendas = Vivienda::paginate(5);
+        $listaViviendas = Vivienda::orderBy('numerovivienda', 'asc')->paginate(5);
 
         return view('livewire.viviendas.gestion-viviendas', compact('listaViviendas'));
     }
