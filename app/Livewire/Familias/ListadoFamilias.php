@@ -15,15 +15,15 @@ class ListadoFamilias extends Component
         este evento se va a escucar en el otro componente donde se cargaran los integrantes
     */
 
-    public function cargarFamilia($idFamilia){
+    public function cargarFamilia($idfamilia){
         
-        $this->dispatch('mostrar-integrantes', $idFamilia);
+        $this->dispatch('mostrar-integrantes', $idfamilia);
         
     }
 
     public function render()
     {
-        $listadoFamilias = Familia::paginate(5);
+        $listadoFamilias = Familia::orderBy('idfamilia', 'asc')->paginate(5);
 
         return view('livewire.familias.listado-familias', compact('listadoFamilias'));
     }

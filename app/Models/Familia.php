@@ -12,9 +12,9 @@ class Familia extends Model
 
     public $timestamps = false;
     protected $table = 'tbl_familia';
-    protected $primaryKey = 'idFamilia';
+    protected $primaryKey = 'idfamilia';
 
     protected $fillable = [
-        'numeroFamilia',
+        'numerofamilia',
     ];
 }

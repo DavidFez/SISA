@@ -21,10 +21,10 @@ class VerIntegrantes extends Component
     */
     
     #[On('mostrar-integrantes')] 
-    public function verIntegrantes($idFamilia)
+    public function verIntegrantes($idfamilia)
     {
-        $this->integrantes = Habitante::where('idFamilia', $idFamilia)->get();
-        $this->numFamilia = Familia::where('idFamilia', $idFamilia)->value('numeroFamilia') ?? 'No encontrada';
+        $this->integrantes = Habitante::where('idfamilia', $idfamilia)->orderBy('idhabitante', 'asc')->get();
+        $this->numFamilia = Familia::where('idfamilia', $idfamilia)->value('numerofamilia') ?? 'No encontrada';
 
         $this->dispatch('abrirModal');
     }

@@ -13,32 +13,32 @@ class Habitante extends Model
     
     public $timestamps = false;
     protected $table = 'tbl_habitante';
-    protected $primaryKey = 'idHabitante';
+    protected $primaryKey = 'idhabitante';
 
     protected $fillable = [
 
-        'idVivienda',
-        'idFamilia',
+        'idvivienda',
+        'idfamilia',
         'nombre',
         'apellido',
-        'fechaNacimiento',
-        'numeroExpediente',
+        'fechanacimiento',
+        'numeroexpediente',
         'estado',
     ];
 
     public function vivienda(){
 
-        return $this->belongsTo(Vivienda::class, 'idVivienda', 'idVivienda');
+        return $this->belongsTo(Vivienda::class, 'idvivienda', 'idvivienda');
     }
 
     public function familia(){
 
-        return $this->belongsTo(Familia::class, 'idFamilia', 'idFamilia');
+        return $this->belongsTo(Familia::class, 'idfamilia', 'idfamilia');
     }
 
     public function fechaNacimientoFomato(){
         
-        return Carbon::parse($this->attributes['fechaNacimiento'])->format('d/m/Y');
+        return Carbon::parse($this->attributes['fechanacimiento'])->format('d/m/Y');
     }
 
 }
