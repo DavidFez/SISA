@@ -45,6 +45,21 @@ class OpListadoHabitantes extends Component
         $this->render();
     }
 
+    #[On('desactivarHabitante')]
+    public function habitanteDesactivar($id){
+
+        $habitante = Habitante::find($id);
+
+        if ($habitante) {
+            $habitante->estado = "Inactivo";
+            $habitante->save(); // Guarda los cambios
+
+            // Emite un evento de JavaScript
+            $this->dispatch('habitanteDesactivado');
+        }
+    }
+
+
     public function render()
     {
         /*  Para esta seccion obtenemos todos aquellos habitantes que estan activos, es decir que residen en la comunidad y que 

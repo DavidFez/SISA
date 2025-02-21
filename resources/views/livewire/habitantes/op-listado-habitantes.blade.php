@@ -47,8 +47,9 @@
                     <td>
                         @if($habitante->estado == 'Activo')
                             <span class="badge bg-success">Activo</span>
-                        @else
-                            <span class="badge bg-danger">Inactivo</span>
+                            <button class="btn btn-sm btn-outline-danger ms-2" onclick="desactivarHabitante({{$habitante->idhabitante}})">
+                                Desac. <i class="fas fa-ban"></i>
+                            </button>
                         @endif
                     </td>
                 </tr>
@@ -59,7 +60,7 @@
     @livewire('habitantes.editar-nombre')
     @livewire('habitantes.editar-apellido')
 
-    <!-- Paginación -->
+
     <div class="d-flex justify-content-center mt-3">
         {{ $habitantes->links() }}
     </div>
