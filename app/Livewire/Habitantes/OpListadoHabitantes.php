@@ -16,9 +16,17 @@ class OpListadoHabitantes extends Component
     protected $paginationTheme = 'bootstrap';
 
 
+    /*
+        En este bloque hay dos funciones que están asociadas a los botones de editar, es decir desde esta fucniones se emiten
+        eventos hacia el componente que lleba a cabo la accion de actulizar el registro correspondiente al nombre o apellido, cabe
+        mencionar que estas fucniones emiten eventos para un componente diferente a este
+    */
     public function nombreHabitante($idHabitante){
-
         $this->dispatch('nombre-habitante', $idHabitante);
+    }
+
+    public function apellidoHabitanteEvent($idHabitante){
+        $this->dispatch('apellido-habitante', $idHabitante);
     }
 
     /*
@@ -26,7 +34,13 @@ class OpListadoHabitantes extends Component
         automatica sin tener que recargar la pagina
      */
     #[On('nombreActualizado')]
-    public function actulizarListado(){
+    public function actulizarListadoNombre(){
+
+        $this->render();
+    }
+
+    #[On('apellidoActualizado')]
+    public function actulizarListadoApellido(){
 
         $this->render();
     }

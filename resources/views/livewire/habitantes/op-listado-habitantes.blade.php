@@ -32,7 +32,7 @@
                         {{ $habitante->apellido }}
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-outline-primary ms-2">
+                        <button class="btn btn-sm btn-outline-primary ms-2"  wire:click="apellidoHabitanteEvent({{ $habitante->idhabitante }})">
                             Editar <i class="fas fa-edit"></i>
                         </button>
                     </td>
@@ -57,6 +57,7 @@
     </table>
 
     @livewire('habitantes.editar-nombre')
+    @livewire('habitantes.editar-apellido')
 
     <!-- Paginación -->
     <div class="d-flex justify-content-center mt-3">
