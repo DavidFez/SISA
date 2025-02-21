@@ -2,10 +2,12 @@
     <table class="table table-hover table-bordered text-center align-middle">
         <thead class="table-dark">
             <tr>
-                <th># Vivienda</th>
-                <th># Familia</th>
+                <th>N° Viv</th>
+                <th>N° Fam</th>
                 <th>Nombre</th>
+                <th>Accion</th>
                 <th>Apellido</th>
+                <th>Accion</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Expediente</th>
                 <th>Estado</th>
@@ -16,8 +18,25 @@
                 <tr>
                     <td><span class="badge bg-primary p-2">{{ $habitante->vivienda->numerovivienda }}</span></td>
                     <td><span class="badge bg-secondary p-2">{{ $habitante->familia->numerofamilia }}</span></td>
-                    <td class="fw-bold">{{ $habitante->nombre }}</td>
-                    <td class="fw-bold">{{ $habitante->apellido }}</td>
+                                    <!-- Nombre con botón de edición -->
+                    <td class="fw-bold">
+                        {{ $habitante->nombre }}
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary ms-2" wire:click="nombreHabitante({{ $habitante->idhabitante }})">
+                            Editar <i class="fas fa-edit"></i>
+                        </button>
+                    </td>
+
+                    <td class="fw-bold">
+                        {{ $habitante->apellido }}
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary ms-2">
+                            Editar <i class="fas fa-edit"></i>
+                        </button>
+                    </td>
+
                     <td>
                         <i class="fas fa-calendar-alt text-info"></i> 
                         {{ $habitante->fechaNacimientoFomato() }}
@@ -36,6 +55,8 @@
             @endforeach
         </tbody>
     </table>
+
+    @livewire('habitantes.editar-nombre')
 
     <!-- Paginación -->
     <div class="d-flex justify-content-center mt-3">

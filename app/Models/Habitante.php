@@ -41,4 +41,19 @@ class Habitante extends Model
         return Carbon::parse($this->attributes['fechanacimiento'])->format('d/m/Y');
     }
 
+    /* 
+        Esto es un conmutador que lo que hace es que convierte las propiedades de nombre y apellido en mayusculas 
+        ya sea en proceso de actualizacion o registros nuevos
+    */
+
+    public function setNombreAttribute($value)
+    {
+        $this->attributes['nombre'] = strtoupper($value);
+    }
+
+    public function setApellidoAttribute($value)
+    {
+        $this->attributes['apellido'] = strtoupper($value);
+    
+    }
 }
