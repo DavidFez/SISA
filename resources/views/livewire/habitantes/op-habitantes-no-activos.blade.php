@@ -27,7 +27,12 @@
                     </td>
                     <td>
                         @if($habitante->estado === 'Inactivo')
+
                             <span class="badge bg-danger">{{ $habitante->estado }}</span>
+                            <button class="btn btn-sm btn-outline-success ms-2" onclick="activarHabitante({{ $habitante->idhabitante }})">
+                                Activar <i class="fas fa-check"></i>
+                            </button>
+
                         @elseif($habitante->estado === 'Fallecido')
                             <span class="badge bg-warning text-dark">{{ $habitante->estado }}</span>
                         @else
