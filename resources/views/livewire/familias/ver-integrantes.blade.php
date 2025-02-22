@@ -16,6 +16,7 @@
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Fecha de Nacimiento</th>
+                                    <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,6 +26,21 @@
                                         <td>{{ $habitante->nombre }}</td>
                                         <td>{{ $habitante->apellido }}</td>
                                         <td>{{ $habitante->fechaNacimientoFomato() }}</td>
+                                        <td>
+                                            @if($habitante->estado === 'Inactivo')
+                                                <span class="badge bg-danger">{{ $habitante->estado }}</span>
+
+                                            @elseif($habitante->estado === 'Fallecido')
+                                                <span class="badge bg-warning">{{ $habitante->estado }}</span>
+
+                                            @elseif($habitante->estado === 'Activo')
+                                                <span class="badge bg-success">{{ $habitante->estado }}</span>
+
+                                            @else
+                                                <span class="badge bg-secondary">{{ $habitante->estado }}</span>
+                                            @endif
+
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
