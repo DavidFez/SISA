@@ -344,6 +344,12 @@ return [
             'url' => 'Comunidades/index',
             'icon' => 'fas fa-fw fa-map-signs',
         ],
+        ['header' => 'OTROS DATOS'],
+        [
+            'text' => 'Generos',
+            'url' => '#',
+            'icon' => 'fas fa-fw fa-mars',
+        ]
     
     ],
 
