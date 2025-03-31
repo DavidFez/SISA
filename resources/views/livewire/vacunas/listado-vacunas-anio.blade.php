@@ -1,5 +1,5 @@
 <div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Busqueda por Año</h3>
+    <h3 class="mb-4 text-primary">Listado de vacunacion por año</h3>
 
     <div class="mb-3 w-50">
         <label for="anio" class="form-label fw-bold">Escribir Año</label>

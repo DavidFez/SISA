@@ -3,7 +3,7 @@
 @section('title', 'Listado Vacunas')
 
 @section('content_header')
-    <h1>Listado de vacunas por año</h1>
+    <h1><span class="badge text-bg-success">VACUNAS</span></h1>
 @stop
 
 @section('content')

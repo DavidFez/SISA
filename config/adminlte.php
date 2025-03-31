@@ -314,12 +314,12 @@ return [
                 [
                     'text' => 'Por Mes y Año',
                     'url' => 'Listado/vacunas/edades',
-                    'icon' => 'far fa-file',
+                    'icon' => 'fas fa-calendar',
                 ],
                 [
                     'text' => 'Por Año',
                     'url' => 'Listado/vacunas/por-anio',
-                    'icon' => 'far fa-file',
+                    'icon' => ' fas fa-file',
                 ],
             ],
         ],
@@ -327,7 +327,7 @@ return [
         [
             'text' => 'Habitantes',
             'url' => 'Habitantes/opciones',
-            'icon' => 'fas fa-fw  fa-user-plus',
+            'icon' => 'fas fa-fw fa-user-plus',
         ],
         [
             'text' => 'Familias',
