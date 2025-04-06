@@ -3,7 +3,7 @@
 @section('title', 'Cominidades')
 
 @section('content_header')
-    <h1>Gestion de Cominidades</h1>
+    <h1><span class="badge text-bg-secondary">COMUNIDADES</span></h1>
 @stop
 
 @section('content')

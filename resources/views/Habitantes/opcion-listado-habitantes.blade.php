@@ -3,7 +3,7 @@
 @section('title', 'Listado de Habitantes')
 
 @section('content_header')
-    <span class="badge text-bg-success"><h1>Listado de Todos los Habitantes</h1></span>
+    <h1><span class="badge text-bg-secondary">HABITANTES ACTIVOS</span></h1>
 @stop
 
 @section('content')

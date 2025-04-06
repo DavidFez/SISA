@@ -3,7 +3,7 @@
 @section('title', 'Viviendas')
 
 @section('content_header')
-    <h1>Gestion de Viviendas</h1>
+    <h1><span class="badge text-bg-secondary">VIVIENDAS</span></h1>
 @stop
 
 @section('content')

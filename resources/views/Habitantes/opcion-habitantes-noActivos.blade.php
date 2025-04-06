@@ -3,7 +3,7 @@
 @section('title', 'Habitantes No Activos')
 
 @section('content_header')
-    <span class="badge text-bg-success"><h1>Listado de Habitantes No Activos</h1></span>
+    <h1><span class="badge text-bg-secondary">HABITANTES NO ACTIVOS</span></h1>
 @stop
 
 @section('content')

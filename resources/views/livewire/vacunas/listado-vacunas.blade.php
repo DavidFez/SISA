@@ -1,39 +1,37 @@
 <div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Listado de vacunación por mes y año</h3>
+    
+    <h3 class="mb-4 text-primary fw-bold">Listado de vacunación por mes y año</h3>
 
-    <div class="mb-3 w-50">
-        <label for="year" class="form-label fw-bold">Escribir Año</label>
-        <input 
-            type="number" 
-            class="form-control border-primary rounded-pill" 
-            placeholder="Escriba un año" 
-            min="1900" 
-            max="2050"
-            wire:model="year">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-4 mb-3">
+            <label for="year" class="form-label fw-bold">Escribir Año</label>
+            <input 
+                type="number" 
+                class="form-control border-primary rounded-pill shadow-sm" 
+                placeholder="Escriba un año" 
+                min="1900" 
+                max="2050"
+                wire:model="year">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="month" class="form-label fw-bold">Seleccionar Mes</label>
+            <select id="month" class="form-select border-primary rounded-pill shadow-sm" wire:model="selectedMonth">
+                <option value="" selected>Elige un mes</option>
+                @foreach([
+                    '01' => 'Enero', '02' => 'Febrero', '03' => 'Marzo', '04' => 'Abril',
+                    '05' => 'Mayo', '06' => 'Junio', '07' => 'Julio', '08' => 'Agosto',
+                    '09' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre'
+                ] as $value => $month)
+                    <option value="{{ $value }}">{{ $month }}</option>
+                @endforeach
+            </select>
+        </div>
     </div>
 
-    <div class="mb-3 w-50">
-        <label for="month" class="form-label fw-bold">Seleccionar Mes</label>
-        <select id="month" class="form-select border-primary rounded-pill" wire:model="selectedMonth">
-            <option value="" selected>Elige un mes</option>
-            <option value="01">Enero</option>
-            <option value="02">Febrero</option>
-            <option value="03">Marzo</option>
-            <option value="04">Abril</option>
-            <option value="05">Mayo</option>
-            <option value="06">Junio</option>
-            <option value="07">Julio</option>
-            <option value="08">Agosto</option>
-            <option value="09">Septiembre</option>
-            <option value="10">Octubre</option>
-            <option value="11">Noviembre</option>
-            <option value="12">Diciembre</option>
-        </select>
-    </div>
-
-    <div class="mb-3 w-50">
+    <div class="mb-4 w-50 text-center">
         <button 
-            class="btn btn-success w-100 fw-bold rounded-pill" 
+            class="btn btn-success w-75 fw-bold rounded-pill shadow-sm" 
             wire:click="buscarHabitantes">
             <i class="fas fa-search"></i> Buscar Habitantes
         </button>
@@ -68,7 +66,7 @@
         </table>
 
         <div class="alert alert-success w-75 mt-4 text-center" role="alert">
-            <span class="badge bg-primary">Resultados: {{ count($habitantes) }} Habitantes</span>
+            <span class="badge bg-primary fs-6">Resultados: {{ count($habitantes) }} Habitantes</span>
         </div>
 
         <table class="table table-bordered table-hover w-75 mt-4">

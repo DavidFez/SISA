@@ -1,5 +1,6 @@
 <div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Listado de vacunacion por año</h3>
+    
+    <h3 class="mb-4 text-primary fw-bold">Listado de vacunación por año</h3>
 
     <div class="mb-3 w-50">
         <label for="anio" class="form-label fw-bold">Escribir Año</label>
@@ -49,7 +50,7 @@
         </table>
 
         <div class="alert alert-success w-75 mt-4 text-center" role="alert">
-            <span class="badge bg-primary">Resultado: {{ count($habitantes) }} Habitantes</span>
+            <span class="badge bg-primary fs-6">Resultado: {{ count($habitantes) }} Habitantes</span>
         </div>
 
         <table class="table table-bordered table-hover w-75 mt-4">

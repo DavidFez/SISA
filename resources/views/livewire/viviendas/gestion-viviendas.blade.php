@@ -1,63 +1,74 @@
-<div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Listado de Viviendas</h3>
-
-    @if ($listaViviendas->count() > 0)
-        <table class="table table-bordered text-center table-hover w-75 mt-4">
-            <thead class="table-dark">
-                <tr>
-                    <th>Número de Vivienda</th>
-                    <th>Dirección</th>
-                    <th class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($listaViviendas as $index => $vivienda)
-                    <tr>
-
-                        <td class="fw-bold">
-                            <h5><span class="badge bg-dark">{{ $vivienda->numerovivienda }}</span></h5>
-                        </td>
-                        <td>
-                            @if ($vivienda->direccion)
-                                <h5><span class="badge text-bg-info">{{ $vivienda->direccion->direccion }}</span></h5>
-                            @else
-                                <h5><span class="badge text-bg-danger">Dirección Pediente de Asignar</span></h5>
-                            @endif
-                        </td>
-                        <td class="text-center">
-                            @if (!$vivienda->direccion)
-                                @livewire('viviendas.asignar-direccion', ['viviendaId' => $vivienda->idvivienda], key($vivienda->idvivienda))
-                            @else
-                                <h5><span class="badge text-bg-success">Dirección Asignada</span></h5>
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-
-
-        <div class="mt-3">
-            {{ $listaViviendas->links() }}
+<div class="container mt-4">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center py-3 rounded-top">
+            <h3 class="mb-0">Listado de Viviendas</h3>
         </div>
-    @else
-        <div class="alert alert-warning w-75 text-center" role="alert">
-            No hay viviendas registradas.
+
+        <div class="card-body bg-light">
+            @if ($listaViviendas->count() > 0)
+                <div class="table-responsive">
+                    <table class="table table-hover text-center align-middle">
+                        <thead class="table-primary">
+                            <tr>
+                                <th class="py-3">Número de Vivienda</th>
+                                <th class="py-3">Dirección</th>
+                                <th class="py-3">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($listaViviendas as $vivienda)
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-dark fs-6 px-3 py-2">
+                                            {{ $vivienda->numerovivienda }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        @if ($vivienda->direccion)
+                                            <span class="badge bg-primary fs-6 px-3 py-2">
+                                                {{ $vivienda->direccion->direccion }}
+                                            </span>
+                                        @else
+                                            <span class="badge bg-danger fs-6 px-3 py-2">
+                                                Dirección pendiente de asignar
+                                            </span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (!$vivienda->direccion)
+                                            @livewire('viviendas.asignar-direccion', ['viviendaId' => $vivienda->idvivienda], key($vivienda->idvivienda))
+                                        @else
+                                            <span class="badge bg-success fs-6 px-3 py-2">
+                                                Dirección asignada
+                                            </span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    {{ $listaViviendas->links() }}
+                </div>
+            @else
+                <div class="alert alert-warning text-center fs-5 fw-bold py-3">
+                    No hay viviendas registradas.
+                </div>
+            @endif
         </div>
-    @endif
+    </div>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
-    
             Livewire.on('direccionAsignada', () => {
-                
-                var modal = document.getElementById('modalAsignarDireccion');
-                var modalInstance = bootstrap.Modal.getInstance(modal);
+                const modal = document.getElementById('modalAsignarDireccion');
+                const modalInstance = bootstrap.Modal.getInstance(modal);
                 if (modalInstance) {
                     modalInstance.hide();
                 }
-    
+
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -66,10 +77,6 @@
                     timer: 2000
                 });
             });
-    
         });
-    
     </script>
-
-
 </div>

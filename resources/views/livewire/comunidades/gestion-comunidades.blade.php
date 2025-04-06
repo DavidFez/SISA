@@ -1,70 +1,75 @@
-<div class="d-flex flex-column align-items-center bg-body-secondary p-4 rounded shadow-sm">
-    <h3 class="mb-4 text-primary">Listado de Comunidades</h3>
-
-    <!-- Campo de ingreso para dirección -->
-    <div class="mb-3 w-50">
-        <label for="direccion" class="form-label fw-bold">Nueva Dirección</label>
-        <input 
-            type="text" 
-            id="direccion"
-            class="form-control border-primary rounded-pill" 
-            placeholder="Escriba una dirección" 
-            wire:model="direccion">
-    </div>
-
-    <!-- Botón para guardar la dirección -->
-    <div class="mb-3 w-50">
-        <button 
-            class="btn btn-success w-100 fw-bold rounded-pill" 
-            wire:click="guardarDireccion">
-            <i class="fas fa-save"></i> Guardar Dirección
-        </button>
-    </div>
-
-    <!-- Tabla de direcciones -->
-    @if(count($direcciones) > 0)
-        <table class="table table-bordered table-hover w-75 mt-4">
-            <thead class="table-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Dirección</th>
-                    <th class="text-center">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($direcciones as $index => $direccion)
-                    <tr>
-                        <td>
-                            <h5><span class="badge bg-dark">{{ $index + 1 }}</span></h5>
-                        </td>
-                        <td>
-                            <h5><span class="badge bg-dark">{{ $direccion->direccion }}</span></h5>
-                        </td>
-                        <td class="text-center">
-                            <!-- Botón de editar -->
-                            <button 
-                                class="btn btn-outline-primary rounded-pill btn-sm fs-6"
-                                wire:click="editarDireccion({{ $direccion->iddireccion }})">
-                                <i class="fas fa-edit"></i> Editar
-                            </button>
-
-                            <button 
-                                class="btn btn-outline-danger rounded-pill btn-sm fs-6"
-                                onclick="confirmarEliminacion({{ $direccion->iddireccion }})">
-                                <i class="fas fa-trash-alt"></i> Eliminar
-                            </button>
-
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <div class="alert alert-dark w-75 mt-4 text-center" role="alert">
-            <span class="badge bg-info">Sin resultados</span>
-            No se encontraron direcciones registradas.
+<div class="container mt-4">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center py-3 rounded-top">
+            <h3 class="mb-0">Listado de Comunidades</h3>
         </div>
-    @endif
+
+        <div class="card-body bg-light d-flex flex-column align-items-center">
+            <!-- Campo de ingreso para dirección -->
+            <div class="mb-3" style="width: 60%;">
+                <label for="direccion" class="form-label fw-bold">Nueva Dirección</label>
+                <input 
+                    type="text" 
+                    id="direccion"
+                    class="form-control border-primary rounded-pill" 
+                    placeholder="Escriba una dirección" 
+                    wire:model="direccion">
+            </div>
+
+            <!-- Botón para guardar la dirección -->
+            <div class="mb-4" style="width: 60%;">
+                <button 
+                    class="btn btn-success w-100 fw-bold rounded-pill" 
+                    wire:click="guardarDireccion">
+                    <i class="fas fa-save"></i> Guardar Dirección
+                </button>
+            </div>
+
+            <!-- Tabla de direcciones -->
+            @if(count($direcciones) > 0)
+                <div class="table-responsive w-100">
+                    <table class="table table-hover text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Dirección</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($direcciones as $index => $direccion)
+                                <tr>
+                                    <td>
+                                        <span class="badge bg-dark fs-6 px-3 py-2">{{ $index + 1 }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-dark fs-6 px-3 py-2">{{ $direccion->direccion }}</span>
+                                    </td>
+                                    <td>
+                                        <button 
+                                            class="btn btn-outline-primary rounded-pill btn-sm me-2"
+                                            wire:click="editarDireccion({{ $direccion->iddireccion }})">
+                                            <i class="fas fa-edit"></i> Editar
+                                        </button>
+                                        <button 
+                                            class="btn btn-outline-danger rounded-pill btn-sm"
+                                            onclick="confirmarEliminacion({{ $direccion->iddireccion }})">
+                                            <i class="fas fa-trash-alt"></i> Eliminar
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="alert alert-dark text-center fs-5 fw-bold py-3 w-100 mt-3">
+                    <span class="badge bg-info">Sin resultados</span>
+                    No se encontraron direcciones registradas.
+                </div>
+            @endif
+        </div>
+    </div>
 
     <script>
         function confirmarEliminacion(id) {
@@ -83,9 +88,8 @@
                 }
             });
         }
-    
-        document.addEventListener('DOMContentLoaded', function () {
 
+        document.addEventListener('DOMContentLoaded', function () {
             Livewire.on('alertaExito', mensaje => {
                 Swal.fire({
                     position: "top-end",
@@ -130,5 +134,4 @@
             });
         });
     </script>
-
 </div>
