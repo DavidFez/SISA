@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::view('Viviendas/index', 'Viviendas.index-viviendas');
 
     Route::view('Familias/index', 'Familias.familias-index');
+
+    Route::view('Generos/index', 'Generos.genero-index');
 });
 
 Route::middleware('auth')->group(function () {

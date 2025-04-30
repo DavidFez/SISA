@@ -347,7 +347,7 @@ return [
         ['header' => 'OTROS DATOS'],
         [
             'text' => 'Generos',
-            'url' => '#',
+            'url' => 'Generos/index',
             'icon' => 'fas fa-fw fa-mars',
         ]
     
