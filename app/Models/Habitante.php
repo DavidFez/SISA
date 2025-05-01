@@ -24,6 +24,7 @@ class Habitante extends Model
         'fechanacimiento',
         'numeroexpediente',
         'estado',
+        'idgenero'
     ];
 
     public function vivienda(){
@@ -39,6 +40,11 @@ class Habitante extends Model
     public function fechaNacimientoFomato(){
         
         return Carbon::parse($this->attributes['fechanacimiento'])->format('d/m/Y');
+    }
+
+    public function genero(){
+
+        return $this->belongsTo(Genero::class, 'idgnero', 'idgenero');
     }
 
     /* 

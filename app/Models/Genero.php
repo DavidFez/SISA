@@ -15,8 +15,8 @@ class Genero extends Model
     protected $primaryKey = 'idgenero';
 
     public $fillable = [
-
-        'genero'
+        'genero',
+        'abreviatura'
     ];
 
     

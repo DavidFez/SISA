@@ -15,5 +15,5 @@
 @stop
 
 @section('js')
-    
+    <script src="{{ asset('js/generoJs/genero.js') }}"></script>
 @stop
