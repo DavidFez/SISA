@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
         Route::get('Habitantes/opciones', 'indexHabitante');
         Route::get('Habitantes/listado-habitantes', 'opcionListadoHabitantes')->name('opcionListHabitantes');
         Route::get('Habitantes/listado-no-activos', 'opcionHabitantesNoActivos')->name('opcionListNoActivos');
+        Route::get('Habitantes/nuevo-habitante', 'agregarNuevoHabitante')->name('nuevoHabitante');
     });
 });
 

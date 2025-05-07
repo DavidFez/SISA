@@ -21,4 +21,9 @@ class HabitantesController extends Controller
 
         return view('Habitantes.opcion-habitantes-noActivos');
     }
+
+    public function agregarNuevoHabitante(){
+
+        return view('Habitantes.opcion-agregar-habitante');
+    }
 }
