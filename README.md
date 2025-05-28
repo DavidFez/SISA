@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About the Developer
+
+I am David, a student of Computer Systems Engineering. I enjoy developing with the Laravel framework, especially for projects with a certain level of complexity. I consider this tool to be very robust and easy to integrate with libraries and plugins that enhance the functionality of a project.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

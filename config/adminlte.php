@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>SISA</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -257,7 +257,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -299,99 +299,58 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
+
+        // Navbar items encabezados de la parte de arriba
         [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
+        // Sidebar items para las opciones del menu del lado izquierdo
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
+            'text' => 'Listado Vacunas',
+            'icon' => 'fas fa-syringe',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'Por Mes y Año',
+                    'url' => 'Listado/vacunas/edades',
+                    'icon' => 'fas fa-calendar',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'Por Año',
+                    'url' => 'Listado/vacunas/por-anio',
+                    'icon' => ' fas fa-file',
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'POBLACIÓN'],
         [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
+            'text' => 'Habitantes',
+            'url' => 'Habitantes/opciones',
+            'icon' => 'fas fa-fw fa-user-plus',
         ],
         [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
+            'text' => 'Familias',
+            'url' => 'Familias/index',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'text' => 'Viviendas',
+            'url' => 'Viviendas/index',
+            'icon' => 'fas fa-fw fa-home',
         ],
+        [
+            'text' => 'Comunidades',
+            'url' => 'Comunidades/index',
+            'icon' => 'fas fa-fw fa-map-signs',
+        ],
+        ['header' => 'OTROS DATOS'],
+        [
+            'text' => 'Generos',
+            'url' => 'Generos/index',
+            'icon' => 'fas fa-fw fa-mars',
+        ]
+    
     ],
 
     /*
@@ -475,12 +434,17 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => 'https://cdn.jsdelivr.net/npm/sweetalert2@11',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => 'https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.min.css',
                 ],
             ],
         ],
@@ -497,6 +461,13 @@ return [
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                 ],
+            ],
+        ],
+        'Bootstrap' => [
+            'active' => true,
+            'files' => [
+                ['type' => 'css', 'asset' => false, 'location' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'],
+                ['type' => 'js', 'asset' => false, 'location' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'],
             ],
         ],
     ],
@@ -546,5 +517,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
